@@ -15,5 +15,10 @@ COPY dist/teamcity $TEAMCITY_DIST
 
 VOLUME $TEAMCITY_DATA_PATH \
        $TEAMCITY_LOGS
+       
+RUN apt-get -y update  && apt-get install -y wget
+RUN echo "deb http://package.perforce.com/apt/ubuntu/ trusty release" > /etc/apt/sources.list.d/perforce.list
+#RUN wget -qO - https://package.perforce.com/perforce.pubkey | apt-key add -
+RUN apt-get -y update && apt-get install -y helix-cli --force-yes
 
 CMD ["/run-services.sh"]
