@@ -23,7 +23,7 @@ mv dist/TeamCity dist/teamcity
 ```
 3) Run the `docker build` command:
 ```
-docker build -t teamcity-server
+docker build -t teamcity-server .
 ```
 
 See our [detailed instructions] (https://hub.docker.com/r/jetbrains/teamcity-server/) on how to use the image in the Docker Hub repository .
